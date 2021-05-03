@@ -1,4 +1,4 @@
-Publish Subscribe Pattern Sample (Pub/Sub)
+***Publish Subscribe Pattern Sample (Pub/Sub)***
 
 An example of publish subscribe pattern with method overloads and strategy pattern.
 

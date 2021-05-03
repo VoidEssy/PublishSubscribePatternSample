@@ -25,6 +25,7 @@ namespace PublishSubscribePatternSample
 
             publisher.Raise(69);
             publisher.Raise(GetInitialListOfStrings());
+            publisher.Raise(string.Empty); // This is used to trigger object handler and subscriber since string is an object that shares traits with primitives :)
             publisher.Raise(1337);
 
 

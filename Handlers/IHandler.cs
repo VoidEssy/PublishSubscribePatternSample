@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PublishSubscribePatternSample.Handlers
 {
@@ -12,6 +10,7 @@ namespace PublishSubscribePatternSample.Handlers
         /// <param name="e"> Since we use polymorphism we supply the base EventArgs type and in the Handle Method we can see if it's one of the specific types</param>
         /// <returns></returns>
         bool CanHandle(EventArgs e);
+
         /// <summary>
         /// Executes the desired logic within the selected handler
         /// </summary>

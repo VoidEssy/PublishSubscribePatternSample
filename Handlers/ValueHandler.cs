@@ -1,7 +1,5 @@
 ﻿using PublishSubscribePatternSample.Events;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PublishSubscribePatternSample.Handlers
 {

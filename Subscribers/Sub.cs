@@ -1,10 +1,7 @@
-﻿using PublishSubscribePatternSample.Events;
-using PublishSubscribePatternSample.Handlers;
+﻿using PublishSubscribePatternSample.Handlers;
 using PublishSubscribePatternSample.Publisher;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PublishSubscribePatternSample.Subscribers
 {
@@ -14,6 +11,7 @@ namespace PublishSubscribePatternSample.Subscribers
         private readonly string Description;
         private readonly IHandler[] Handlers; //= new IHandler[] { new ValueHandler(), new ObjectHandler(), new CollectionHandler() }; // Older version for reference, if you want every Sub to be able to handle every message
         private readonly ConsoleColor Color;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -73,11 +71,13 @@ namespace PublishSubscribePatternSample.Subscribers
         }
 
         #region IGNORE THIS ADDED FOR PERSONAL COMFORT WHEN LOOKING AT CONSOLE
+
         private static ConsoleColor GetRandomConsoleColor()
         {
             var consoleColors = Enum.GetValues(typeof(ConsoleColor));
             return (ConsoleColor)consoleColors.GetValue(new Random().Next(consoleColors.Length));
         }
-        #endregion
+
+        #endregion IGNORE THIS ADDED FOR PERSONAL COMFORT WHEN LOOKING AT CONSOLE
     }
 }

@@ -1,14 +1,12 @@
 ﻿using PublishSubscribePatternSample.Events;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 
 namespace PublishSubscribePatternSample.Publisher
 {
     /// <summary>
     /// Publisher is responsible for creating the events based on input provided from the Program.CS
-    /// It has right now 3 overloaded, 
+    /// It has right now 3 overloaded,
     /// Raise an event with collection
     /// Raise an event with int value
     /// Raise an event with an object

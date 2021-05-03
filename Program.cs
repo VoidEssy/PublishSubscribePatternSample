@@ -1,5 +1,4 @@
-﻿using PublishSubscribePatternSample.Events;
-using PublishSubscribePatternSample.Handlers;
+﻿using PublishSubscribePatternSample.Handlers;
 using PublishSubscribePatternSample.Publisher;
 using PublishSubscribePatternSample.Subscribers;
 using System;
@@ -7,13 +6,13 @@ using System.Collections.Generic;
 
 namespace PublishSubscribePatternSample
 {
-    class Program
+    internal class Program
     {
         /// <summary>
         /// Consider this your playground where you can use Method Signatures to configure and manipulate the created
         /// Subscribers and Data
         /// </summary>
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Pub publisher = new Pub();
             var sub1 = new Sub("Sub1", "I Only care about numerical values", publisher, new IHandler[] { new ValueHandler() });
@@ -21,13 +20,10 @@ namespace PublishSubscribePatternSample
             var sub3 = new Sub("Sub3", "I Only care about Objects", publisher, new IHandler[] { new ObjectHandler() });
             var sub4 = new Sub("Sub4", "I care about everything", publisher, new IHandler[] { new ValueHandler(), new ObjectHandler(), new CollectionHandler() });
 
-
-
             publisher.Raise(69);
             publisher.Raise(GetInitialListOfStrings());
             publisher.Raise(string.Empty); // This is used to trigger object handler and subscriber since string is an object that shares traits with primitives :)
             publisher.Raise(1337);
-
 
             Console.WriteLine("Hit Enter to kill this");
 

@@ -7,11 +7,11 @@ namespace PublishSubscribePatternSample.Events
 {
     public class CollectionEvent: EventArgs
     {
-        public List<string> Value { get; set; }
+        public List<string> Collection { get; set; }
 
         public CollectionEvent(List<string> collection)
         {
-            Value = collection;
+            Collection = collection;
         }
     }
 }

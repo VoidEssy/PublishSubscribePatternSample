@@ -15,7 +15,7 @@ namespace PublishSubscribePatternSample.Handlers
         public void Handle(EventArgs e)
         {
             var eventContent = e as CollectionEvent;
-            foreach (var str in eventContent.Value)
+            foreach (var str in eventContent.Collection)
             {
                 Console.WriteLine(str);
             }

@@ -9,6 +9,10 @@ namespace PublishSubscribePatternSample
 {
     class Program
     {
+        /// <summary>
+        /// Consider this your playground where you can use Method Signatures to configure and manipulate the created
+        /// Subscribers and Data
+        /// </summary>
         static void Main(string[] args)
         {
             Pub publisher = new Pub();

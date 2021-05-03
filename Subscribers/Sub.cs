@@ -13,6 +13,7 @@ namespace PublishSubscribePatternSample.Subscribers
         private readonly string ID;
         private readonly string Description;
         private readonly IHandler[] Handlers; //= new IHandler[] { new ValueHandler(), new ObjectHandler(), new CollectionHandler() }; // Older version for reference, if you want every Sub to be able to handle every message
+        private readonly ConsoleColor Color;
         /// <summary>
         /// Constructor
         /// </summary>
@@ -28,6 +29,8 @@ namespace PublishSubscribePatternSample.Subscribers
 
             // Subscribe to the events
             pub.CreatedEvent += HandleEvent;
+
+            Color = GetRandomConsoleColor();
         }
 
         /// <summary>
@@ -35,8 +38,10 @@ namespace PublishSubscribePatternSample.Subscribers
         /// </summary>
         /// <param name="sender"> Source of event in this case Pub</param>
         /// <param name="e"> Content of event </param>
-        void HandleEvent(object sender, EventArgs e)
+        private void HandleEvent(object sender, EventArgs e)
         {
+            // Added for ease of reading
+            SetMyColor();
             // The If Statement is added as an after thought to keep the console clean.
             if (Handlers.Any(x => x.CanHandle(e)))
             {
@@ -61,5 +66,18 @@ namespace PublishSubscribePatternSample.Subscribers
             Console.WriteLine("-----------------------");
             Console.WriteLine();
         }
+
+        private void SetMyColor()
+        {
+            Console.ForegroundColor = Color;
+        }
+
+        #region IGNORE THIS ADDED FOR PERSONAL COMFORT WHEN LOOKING AT CONSOLE
+        private static ConsoleColor GetRandomConsoleColor()
+        {
+            var consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            return (ConsoleColor)consoleColors.GetValue(new Random().Next(consoleColors.Length));
+        }
+        #endregion
     }
 }

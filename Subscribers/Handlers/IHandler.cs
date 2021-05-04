@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PublishSubscribePatternSample.Handlers
+namespace Subscribers.Handlers
 {
     public interface IHandler
     {

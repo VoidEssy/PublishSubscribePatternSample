@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PublishSubscribePatternSample.Events
+namespace Events
 {
     public class CollectionEvent : EventArgs
     {

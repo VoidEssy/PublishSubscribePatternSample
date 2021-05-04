@@ -1,8 +1,8 @@
-﻿using PublishSubscribePatternSample.Events;
+﻿using Events;
 using System;
 using System.Collections.Generic;
 
-namespace PublishSubscribePatternSample.Publisher
+namespace Publisher
 {
     /// <summary>
     /// Publisher is responsible for creating the events based on input provided from the Program.CS

@@ -1,9 +1,9 @@
-﻿using PublishSubscribePatternSample.Handlers;
-using PublishSubscribePatternSample.Publisher;
+﻿using Publisher;
+using Subscribers.Handlers;
 using System;
 using System.Linq;
 
-namespace PublishSubscribePatternSample.Subscribers
+namespace Subscribers
 {
     public class Sub
     {
@@ -65,8 +65,8 @@ namespace PublishSubscribePatternSample.Subscribers
             Console.WriteLine();
         }
 
-
         #region IGNORE THIS ADDED FOR PERSONAL COMFORT WHEN LOOKING AT CONSOLE
+
         private void SetMyColor()
         {
             Console.ForegroundColor = Color;

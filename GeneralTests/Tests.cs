@@ -1,6 +1,6 @@
+using Events;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PublishSubscribePatternSample.Events;
-using PublishSubscribePatternSample.Handlers;
+using Subscribers.Handlers;
 
 namespace GeneralTests
 {

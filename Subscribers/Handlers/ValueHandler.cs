@@ -1,7 +1,7 @@
-﻿using PublishSubscribePatternSample.Events;
+﻿using Events;
 using System;
 
-namespace PublishSubscribePatternSample.Handlers
+namespace Subscribers.Handlers
 {
     public class ValueHandler : IHandler
     {

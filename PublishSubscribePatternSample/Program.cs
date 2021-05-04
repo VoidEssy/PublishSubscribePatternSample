@@ -1,6 +1,6 @@
-﻿using PublishSubscribePatternSample.Handlers;
-using PublishSubscribePatternSample.Publisher;
-using PublishSubscribePatternSample.Subscribers;
+﻿using Publisher;
+using Subscribers;
+using Subscribers.Handlers;
 using System;
 using System.Collections.Generic;
 
@@ -21,10 +21,12 @@ namespace PublishSubscribePatternSample
             var sub4 = new Sub("Sub4", "I care about everything", publisher, new IHandler[] { new ValueHandler(), new ObjectHandler(), new CollectionHandler() });
 
             #region Fake Data Manipulations Before publishing to illustrate mutations
+
             //Lets assume you got something from layer above and now you need to change it before passing it to the Subscribers
             var fakeCollection = GetInitialListOfStrings();
             MyFakeDataMutation(fakeCollection);
-            #endregion
+
+            #endregion Fake Data Manipulations Before publishing to illustrate mutations
 
             publisher.Raise(MyFakeDataMutation(69));
             publisher.Raise(fakeCollection);
@@ -49,6 +51,7 @@ namespace PublishSubscribePatternSample
         }
 
         #region Fake proccessing data manipulation region
+
         /// <summary>
         /// Lets expand our list a bit via mutation.
         /// </summary>
@@ -80,6 +83,7 @@ namespace PublishSubscribePatternSample
             dataToMutate = Guid.NewGuid().ToString(); // can instantly return but this is here to illustrate some kind of operation on the data.
             return dataToMutate;
         }
-        #endregion
+
+        #endregion Fake proccessing data manipulation region
     }
 }

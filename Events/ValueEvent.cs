@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PublishSubscribePatternSample.Events
+namespace Events
 {
     public class ValueEvent : EventArgs
     {

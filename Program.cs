@@ -48,6 +48,7 @@ namespace PublishSubscribePatternSample
             return strings;
         }
 
+        #region Fake proccessing data manipulation region
         /// <summary>
         /// Lets expand our list a bit via mutation.
         /// </summary>
@@ -79,5 +80,6 @@ namespace PublishSubscribePatternSample
             dataToMutate = Guid.NewGuid().ToString(); // can instantly return but this is here to illustrate some kind of operation on the data.
             return dataToMutate;
         }
+        #endregion
     }
 }

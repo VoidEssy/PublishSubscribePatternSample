@@ -5,7 +5,7 @@ using Subscribers.Handlers;
 namespace GeneralTests
 {
     [TestClass]
-    public class Tests
+    public class HandlerTests
     {
         /// <summary>
         /// We could add 1 for every single handler's every single method.

@@ -10,6 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FakeDataProvider\FakeDataProvider.csproj" />
+    <ProjectReference Include="..\FakeProccessor\FakeProccessor.csproj" />
     <ProjectReference Include="..\Subscribers\Subscribers.csproj" />
   </ItemGroup>
 

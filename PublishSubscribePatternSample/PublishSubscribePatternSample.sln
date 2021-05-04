@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subscribers", "..\Subscribe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "..\Events\Events.csproj", "{A499AA8D-F20E-4C97-BE8B-3074D469D769}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeProccessor", "..\FakeProccessor\FakeProccessor.csproj", "{C15D96EB-EE62-447E-BCFC-6E2A87922F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeDataProvider", "..\FakeDataProvider\FakeDataProvider.csproj", "{3A1F7093-7218-402E-98D3-6A919FD1F9AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{A499AA8D-F20E-4C97-BE8B-3074D469D769}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A499AA8D-F20E-4C97-BE8B-3074D469D769}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A499AA8D-F20E-4C97-BE8B-3074D469D769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15D96EB-EE62-447E-BCFC-6E2A87922F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15D96EB-EE62-447E-BCFC-6E2A87922F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15D96EB-EE62-447E-BCFC-6E2A87922F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15D96EB-EE62-447E-BCFC-6E2A87922F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A1F7093-7218-402E-98D3-6A919FD1F9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A1F7093-7218-402E-98D3-6A919FD1F9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A1F7093-7218-402E-98D3-6A919FD1F9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A1F7093-7218-402E-98D3-6A919FD1F9AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

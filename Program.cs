@@ -20,10 +20,15 @@ namespace PublishSubscribePatternSample
             var sub3 = new Sub("Sub3", "I Only care about Objects", publisher, new IHandler[] { new ObjectHandler() });
             var sub4 = new Sub("Sub4", "I care about everything", publisher, new IHandler[] { new ValueHandler(), new ObjectHandler(), new CollectionHandler() });
 
-            publisher.Raise(69);
-            publisher.Raise(GetInitialListOfStrings());
-            publisher.Raise(string.Empty); // This is used to trigger object handler and subscriber since string is an object that shares traits with primitives :)
-            publisher.Raise(1337);
+            #region Fake Data Manipulations Before publishing to illustrate mutations
+            //Lets assume you got something from layer above and now you need to change it before passing it to the Subscribers
+            var fakeCollection = GetInitialListOfStrings();
+            MyFakeDataMutation(fakeCollection);
+            #endregion
+
+            publisher.Raise(MyFakeDataMutation(69));
+            publisher.Raise(fakeCollection);
+            publisher.Raise(MyFakeDataMutation(string.Empty)); // This is used to trigger object handler and subscriber since string is an object that shares traits with primitives :)
 
             Console.WriteLine("Hit Enter to kill this");
 
@@ -43,21 +48,36 @@ namespace PublishSubscribePatternSample
             return strings;
         }
 
-        private void MyFakeDataMutation(List<string> dataToMutate)
+        /// <summary>
+        /// Lets expand our list a bit via mutation.
+        /// </summary>
+        /// <param name="dataToMutate"></param>
+        private static void MyFakeDataMutation(List<string> dataToMutate)
         {
             dataToMutate.Add("Nuke");
             dataToMutate.Add("Furby");
             dataToMutate.Add("Sputnik V");
         }
 
-        private void MyFakeDataMutation(int dataToMutate)
+        /// <summary>
+        /// Lets increase our value by changing it and returning the new value
+        /// This is done because primitives are passed by Value and as such can't be mutatated and it's a bad practice to mutate primitives
+        /// </summary>
+        /// <param name="dataToMutate"></param>
+        private static int MyFakeDataMutation(int dataToMutate)
         {
-            dataToMutate += 1337;
+            return dataToMutate += 1337;
         }
 
-        private void MyFakeDataMutation(object dataToMutate)
+        /// <summary>
+        /// Well since in this example we are using string in order to avoid constructing an object.
+        /// Lets do just that, by for example generating a GUID and stuffing it in there
+        /// </summary>
+        /// <param name="dataToMutate"></param>
+        private static object MyFakeDataMutation(object dataToMutate)
         {
-            // Will add later maybe
+            dataToMutate = Guid.NewGuid().ToString(); // can instantly return but this is here to illustrate some kind of operation on the data.
+            return dataToMutate;
         }
     }
 }

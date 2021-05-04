@@ -65,12 +65,12 @@ namespace PublishSubscribePatternSample.Subscribers
             Console.WriteLine();
         }
 
+
+        #region IGNORE THIS ADDED FOR PERSONAL COMFORT WHEN LOOKING AT CONSOLE
         private void SetMyColor()
         {
             Console.ForegroundColor = Color;
         }
-
-        #region IGNORE THIS ADDED FOR PERSONAL COMFORT WHEN LOOKING AT CONSOLE
 
         private static ConsoleColor GetRandomConsoleColor()
         {
